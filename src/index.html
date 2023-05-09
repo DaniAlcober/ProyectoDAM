@@ -9,20 +9,23 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="./style.css">
+
+    <link rel="shortcut icon" href="#">
 </head>
 
 <body>
     <script defer src="./ux.js"></script>
+    <script defer src="./renderer.js"></script>
 
     <div class="wrapper">
         <div class="wrapper">
 
             <!--SIDEBAR-->
             <div class="sidebar">
-
+                
                 <!--LOGO-->
                 <div class="profile">
-                    <img src="./LockIn.png" alt="profile_picture">
+                    <img src="./images/LockIn.png" alt="profile_picture">
                 </div>
 
                 <!--MENU-->
@@ -97,11 +100,16 @@
                 -->
 
                 <div class="tab" id="home">
-                    <h3>HOLA</h3>
+                    
                 </div>
 
                 <div class="tab" id="functions">
-                    <h3>QUE</h3>
+                    <h3>Get functions from a file</h3><br>
+                    <input id="file" type="file">
+                    <input id="showFunctions" type="button" value="Show functions">
+
+                    <br>
+                    <div id="functions"></div>
                 </div>
 
                 <div class="tab" id="experiments">
