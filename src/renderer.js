@@ -1,10 +1,21 @@
-var btnFile = document.getElementById('file')
+//var btnFile = document.getElementById('file')
 var btnShowFunctions = document.getElementById('showFunctions')
 var btnFile = document.getElementById('file')
 var functions = document.getElementById('functions')
 
-let file
+//let file
 
+let fs = require('fs');
+
+let fsFunctions = fs.readFileSync('./functions.json');
+let functionsArray = new Array();
+functionsArray = JSON.parse(fsFunctions)
+
+btnShowFunctions.addEventListener('click', () => {
+    functionsArray.innerHTML = functionsArray
+})
+
+/* 
 btnFile.onchange = e => {
     file = e.target.files[0]
     sendToPython()
@@ -33,3 +44,4 @@ btnShowFunctions.addEventListener('click', () => {
     })
     
 })
+*/
