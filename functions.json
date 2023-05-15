@@ -1,0 +1,55 @@
+[
+    {
+        "name": "suma",
+        "parameters": [
+            "a",
+            "b"
+        ]
+    },
+    {
+        "name": "resta",
+        "parameters": [
+            "a",
+            "b"
+        ]
+    },
+    {
+        "name": "multiplica",
+        "parameters": [
+            "a",
+            "b"
+        ]
+    },
+    {
+        "name": "divide",
+        "parameters": [
+            "a",
+            "b"
+        ]
+    },
+    {
+        "name": "cuentaString",
+        "parameters": [
+            "str",
+            "char"
+        ]
+    },
+    {
+        "name": "mayusculas",
+        "parameters": [
+            "str"
+        ]
+    },
+    {
+        "name": "minusculas",
+        "parameters": [
+            "str"
+        ]
+    },
+    {
+        "name": "mayusculasPrimera",
+        "parameters": [
+            "str"
+        ]
+    }
+]
