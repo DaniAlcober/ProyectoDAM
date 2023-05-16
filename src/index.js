@@ -10,11 +10,11 @@ function createWindow() {
     height: 800,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false,
-      preload: path.join(__dirname, 'preload.js')
+      contextIsolation: false
+      //preload: path.join(__dirname, 'preload.js')
     }
   })
-  require("@electron/remote/main").enable(win.webContents)
+  require("@electron/remote/main").enable(mainWindow.webContents)
 
   // and load the index.html of the app.
   mainWindow.loadFile('src/index.html')
