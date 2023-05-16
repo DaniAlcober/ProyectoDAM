@@ -1,18 +1,31 @@
 //var btnFile = document.getElementById('file')
 var btnShowFunctions = document.getElementById('showFunctions')
 var btnFile = document.getElementById('file')
-var functions = document.getElementById('functions')
+var functionsTable = document.getElementById('functionsTable')
 
 //let file
 
-let fs = require('fs');
+let fs = require('fs')
 
-let fsFunctions = fs.readFileSync('./functions.json');
+let fsFunctions = fs.readFileSync('src/data/functions.json');
 let functionsArray = new Array();
 functionsArray = JSON.parse(fsFunctions)
 
 btnShowFunctions.addEventListener('click', () => {
-    functionsArray.innerHTML = functionsArray
+    functionsArray.forEach(func => {
+        functionsTable.innerHTML +=
+            `
+            <tr>
+                <td>${func.name}</td>
+                <td>${func.parameters}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            `
+    });
+
 })
 
 /* 

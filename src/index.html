@@ -8,7 +8,8 @@
     <title>Index</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/table.css">
 
     <link rel="shortcut icon" href="#">
 </head>
@@ -109,7 +110,35 @@
                     <input id="showFunctions" type="button" value="Show functions">
 
                     <br>
-                    <div id="functions"></div>
+                    <h1>FUNCTIONS</h1>
+                    <div class="table-header">
+                        <table cellpaddin="0" cellspacing="0" border="0">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Parameters</th>
+                                    <th>Description</th>
+                                    <th>Run</th>
+                                    <th>Delete</th>
+                                    <th>Add to Experiment</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="table-content">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tbody  id="functionsTable">
+                                <tr>
+                                    <td>Prueba</td>
+                                    <td>p1, p2</td>
+                                    <td>Esto es una prueba</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="tab" id="experiments">
@@ -117,8 +146,6 @@
                 </div>
 
             </div>
-
-
         </div>
     </div>
 </body>
