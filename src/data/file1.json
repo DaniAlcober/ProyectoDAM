@@ -1,0 +1,34 @@
+[
+    {
+        "name": "suma",
+        "parameters": [
+            "a",
+            "b"
+        ],
+        "file": "math.py"
+    },
+    {
+        "name": "resta",
+        "parameters": [
+            "a",
+            "b"
+        ],
+        "file": "math.py"
+    },
+    {
+        "name": "multiplica",
+        "parameters": [
+            "a",
+            "b"
+        ],
+        "file": "math.py"
+    },
+    {
+        "name": "divide",
+        "parameters": [
+            "a",
+            "b"
+        ],
+        "file": "math.py"
+    }
+]

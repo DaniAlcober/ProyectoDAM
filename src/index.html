@@ -105,11 +105,6 @@
                 </div>
 
                 <div class="tab" id="functions">
-                    <h3>Get functions from a file</h3><br>
-                    <input id="file" type="file">
-                    <input id="showFunctions" type="button" value="Show functions">
-
-                    <br>
                     <h1>FUNCTIONS</h1>
                     <div class="table-header">
                         <table cellpaddin="0" cellspacing="0" border="0">
@@ -118,6 +113,7 @@
                                     <th>Name</th>
                                     <th>Parameters</th>
                                     <th>Description</th>
+                                    <th>File</th>
                                     <th>Run</th>
                                     <th>Delete</th>
                                     <th>Add to Experiment</th>
@@ -128,17 +124,14 @@
                     <div class="table-content">
                         <table cellpadding="0" cellspacing="0" border="0">
                             <tbody  id="functionsTable">
-                                <tr>
-                                    <td>Prueba</td>
-                                    <td>p1, p2</td>
-                                    <td>Esto es una prueba</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
+
+                    <input id="addFunctions1" type="button" value="Add Functions 1">
+                    <input id="addFunctions2" type="button" value="Add Functions 2">
+                    <input id="addFunctions3" type="button" value="Add Functions 3">
                 </div>
 
                 <div class="tab" id="experiments">

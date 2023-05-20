@@ -1,0 +1,31 @@
+[
+    {
+        "name": "cuentaString",
+        "parameters": [
+            "str",
+            "char"
+        ],
+        "file": "string.py"
+    },
+    {
+        "name": "mayusculas",
+        "parameters": [
+            "str"
+        ],
+        "file": "string.py"
+    },
+    {
+        "name": "minusculas",
+        "parameters": [
+            "str"
+        ],
+        "file": "string.py"
+    },
+    {
+        "name": "mayusculasPrimera",
+        "parameters": [
+            "str"
+        ],
+        "file": "string.py"
+    }
+]
