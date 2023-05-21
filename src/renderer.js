@@ -1,4 +1,5 @@
 let fs = require('fs')
+const path = require('path')
 
 var functionsTable = document.getElementById('functionsTable')
 var functionsSavedPath = 'src/data/functions.json'
@@ -39,24 +40,21 @@ function addFunctionsToTable(functions) {
             </tr>`
     })
 
+    // Add listener to dropdown options on every function
     functionsTable.innerHTML = functionsTableHtml
-}
-
-// Add listener to dropdown options on every function
-let dropdownOptions = document.querySelectorAll('.dropdown-options ul li');
-for (var i = 0; i < dropdownOptions.length; i++) {
-    dropdownOptions[i].addEventListener('click', (e) => {
-        console.log(e.target.id);
-    })
+    let dropdownOptions = document.querySelectorAll('.dropdown-options ul li');
+    for (var i = 0; i < dropdownOptions.length; i++) {
+        dropdownOptions[i].addEventListener('click', (e) => {
+            console.log(e.target.id);
+        })
+    }
 }
 
 // Prueba añadir funciones persistentes a la tabla
 var btn_addFunctions1 = document.getElementById('addFunctions1')
-var btn_addFunctions2 = document.getElementById('addFunctions2')
-var btn_addFunctions3 = document.getElementById('addFunctions3')
 
-function addFunctions(path) {
-    const functionsArray = getFunctionsArray(path)
+// Add functions to function.JSON checking for duplicates, then calls addFunctionsToTable
+function addFunctions(functionsArray) {
     let functionsArrayTemp = getFunctionsArray(functionsSavedPath)
     const functionsSaved = getFunctionsArray(functionsSavedPath)
     let repeatedCount = 0;
@@ -66,7 +64,6 @@ function addFunctions(path) {
         repeated = false
 
         for (funcSaved of functionsSaved) {
-            console.log("File: " + func.name + "; Saved: " + funcSaved.name)
             if ((func.name).localeCompare(funcSaved.name) == 0) {
                 repeatedCount++
                 repeated = true
@@ -85,46 +82,34 @@ function addFunctions(path) {
     console.log('Added: ' + addedCount + '; Repeated: ' + repeatedCount)
 }
 
-btn_addFunctions1.addEventListener('click', () => {
-    addFunctions('src/data/file1.json')
-})
-
-btn_addFunctions2.addEventListener('click', () => {
-    addFunctions('src/data/file2.json')
-})
-
-btn_addFunctions3.addEventListener('click', () => {
-    addFunctions('src/data/file3.json')
-})
+var btnFile = document.getElementById('file')
+let file, fileName, fileExt
 
 
-/* 
 btnFile.onchange = e => {
-    file = e.target.files[0]
-    sendToPython()
+    file = e.target.files[0].name
+    fileName = path.parse(file).name
+    fileExt = path.parse(file).ext
 }
 
+sendToPython()
 function sendToPython() {
     var { PythonShell } = require('python-shell')
     let options = {
         mode: 'text'
     };
 
-    PythonShell.run(file.path, options).then(res => {
+    PythonShell.run('C:/Favoritos/DAM/Proyecto/ProyectoDAM/py/server.py', options).then(res => {
         console.log('results: ', res)
     })
 }
 
-btnShowFunctions.addEventListener('click', () => {
-    console.log('Hola')
-    fetch('http://127.0.0.1:5002/getFunctions').then(data => {
+btn_addFunctions1.addEventListener('click', () => {
+    fetch(`http://127.0.0.1:5002/getFunctions?file=${fileName}`).then(data => {
         return data.text()
     }).then(text => {
-        console.log('Functions: ' + text)
-        functions.innerHTML = text;
+        addFunctions(JSON.parse(text))
     }).catch(err => {
         console.log(err)
     })
-    
 })
-*/

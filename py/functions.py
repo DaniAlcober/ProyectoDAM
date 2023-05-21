@@ -1,26 +1,8 @@
-def suma(a, b):
-    return a + b
+def function10(param10, param11, param12, param13):
+    return "function10"
 
-def resta(a, b):
-    return a - b
+def function20(param20, param21, param22, param23):
+    return "function20"
 
-def multiplica(a, b):
-    return a * b
-
-def divide(a, b):
-    return a / b
-
-def cuentaString(str, char):
-   return str.count(char)
-
-def mayusculas(str):
-    return str.upper()
-
-def minusculas(str):
-    return str.lower()
-
-def mayusculasPrimera(str):
-    return str.capitalize()
-
-
-
+def function30(param30, param31, param32, param33):
+    return "function30"
