@@ -24,13 +24,30 @@ function addFunctionsToTable(functions) {
                 <td>${func.parameters}</td>
                 <td></td>
                 <td>${func.file}</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Hover</button>
+                        <div class="dropdown-options">
+                            <ul>
+                                <li id="run-${func.name}">Run</li>
+                                <li id="add-${func.name}">Add to set</li>
+                                <li id="delete-${func.name}">Delete</li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
             </tr>`
     })
 
     functionsTable.innerHTML = functionsTableHtml
+}
+
+// Add listener to dropdown options on every function
+let dropdownOptions = document.querySelectorAll('.dropdown-options ul li');
+for (var i = 0; i < dropdownOptions.length; i++) {
+    dropdownOptions[i].addEventListener('click', (e) => {
+        console.log(e.target.id);
+    })
 }
 
 // Prueba añadir funciones persistentes a la tabla
@@ -57,7 +74,7 @@ function addFunctions(path) {
             }
         }
 
-        if(!repeated) {
+        if (!repeated) {
             addedCount++
             functionsArrayTemp.push(func)
         }
