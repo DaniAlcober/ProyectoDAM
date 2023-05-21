@@ -26,7 +26,7 @@ function addFunctionsToTable(functions) {
                 <td>${func.file}</td>
                 <td>
                     <div class="dropdown">
-                        <button class="dropdown-btn">Hover</button>
+                        <i class="fa fa-bars"></i>
                         <div class="dropdown-options">
                             <ul>
                                 <li id="run-${func.name}">Run</li>
