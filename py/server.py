@@ -12,7 +12,7 @@ app = Flask(__name__)
 @cross_origin()
 @app.route("/getFunctions")
 def getFunctions():
-    fileName = request.args.get('file')  
+    fileName = request.args.get('file')
     fileModule = importlib.import_module(fileName)
     #fileModule = getattr(sys.modules[__name__], fileName)
     
@@ -22,21 +22,25 @@ def getFunctions():
         dictionary = {}
         dictionary.update({"name": func[0]})
         dictionary.update({"parameters":getattr(fileModule, func[0]).__code__.co_varnames})
-        dictionary.update({"file": "functions"})
+        dictionary.update({"file": fileName})
         dict_list.append(dictionary)
 
     json_object = json.dumps(dict_list)
     return json_object
 
-@cross_origin
+@cross_origin()
 @app.route("/runFunction")
-def runFunction(funcName):
-    #func = getattr(functions, funcName)
+def runFunction():
+    fileName = request.args.get('file')
+    fileModule = importlib.import_module(fileName)
+    functionName = request.args.get('function')
+    functionCall = getattr(fileModule, functionName)
+    a = request.args.get('a')
+    b = request.args.get('b')
 
-    file = open("./results.txt")
-    result = functions.suma(2, 3)
-    file.write(result)
-    file.close
+    result = functionCall(float(a), float(b))
 
+    return jsonify(result)
+    
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5002)
