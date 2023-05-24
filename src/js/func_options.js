@@ -15,3 +15,17 @@ function runFunction(funcName) {
     })
 }
 
+// ------------- Modal Dialog -----------------
+
+const modal_param = document.getElementById('modal_param')
+const close_modal = document.getElementById('close modal_param')
+const param_form = document.getElementById('param_form')
+
+function openModal() {
+    modal_param.close()
+    modal_param.showModal()
+}
+
+close_modal.addEventListener('click', () => {
+    modal_param.close()
+})

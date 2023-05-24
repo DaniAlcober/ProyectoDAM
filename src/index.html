@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/table.css">
     <link rel="stylesheet" href="./css/dropdown-menu.css">
+    <link rel="stylesheet" href="./css/modal.css">
 
     <link rel="shortcut icon" href="#">
 </head>
@@ -104,7 +105,14 @@
                         </table>
                     </div>
                     <input id="file" type="file">
-                    <input id="addFunctions1" type="button" value="Add Functions 1">
+                    <input id="addFunctions" type="button" value="Add Functions 1">
+                    <dialog class="modal" id="modal_param">
+                        <form class="form" method="dialog" id="param_form">
+                            
+                        </form>
+                        <button class="ok-modal" id="ok modal_param">Ok</button>
+                        <button class="close-modal" id="close modal_param">Cancel</button>
+                    </dialog>
                 </div>
                     
                 <div class="tab" id="experiments">
