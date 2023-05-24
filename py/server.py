@@ -31,14 +31,25 @@ def getFunctions():
 @cross_origin()
 @app.route("/runFunction")
 def runFunction():
-    fileName = request.args.get('file')
-    fileModule = importlib.import_module(fileName)
-    functionName = request.args.get('function')
-    functionCall = getattr(fileModule, functionName)
-    a = request.args.get('a')
-    b = request.args.get('b')
+    args = request.args.to_dict()
+    #fileName = request.args.get('file')
+    #functionName = request.args.get('function')
 
-    result = functionCall(float(a), float(b))
+    fileName = args["file"]
+    fileModule = importlib.import_module(fileName)
+    functionName = args["function"]
+    functionCall = getattr(fileModule, functionName)
+
+    # Remove "file" and "function" so only parameters remain in dict
+    args.pop("file")
+    args.pop("function")
+
+    # Convert numbers to float
+    for p in args:
+        if(args[p].isnumeric):
+            args[p] = float(args[p])
+
+    result = functionCall(**args)
 
     return jsonify(result)
     
