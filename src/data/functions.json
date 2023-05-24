@@ -7,20 +7,25 @@
         "file": "initial.py"
     },
     {
-        "name": "suma",
+        "name": "mayusculas",
         "parameters": [
-            "a",
-            "b"
+            "str"
         ],
-        "file": "math.py"
+        "file": "strings"
     },
     {
-        "name": "resta",
+        "name": "mayusculasPrimera",
         "parameters": [
-            "a",
-            "b"
+            "str"
         ],
-        "file": "math.py"
+        "file": "strings"
+    },
+    {
+        "name": "minusculas",
+        "parameters": [
+            "str"
+        ],
+        "file": "strings"
     },
     {
         "name": "multiplica",
@@ -28,7 +33,7 @@
             "a",
             "b"
         ],
-        "file": "math.py"
+        "file": "maths"
     },
     {
         "name": "divide",
@@ -36,46 +41,15 @@
             "a",
             "b"
         ],
-        "file": "math.py"
+        "file": "maths"
     },
     {
-        "name": "cuentaString",
+        "name": "suma",
         "parameters": [
-            "str",
-            "char"
+            "a",
+            "b"
         ],
-        "file": "string.py"
-    },
-    {
-        "name": "mayusculas",
-        "parameters": [
-            "str"
-        ],
-        "file": "string.py"
-    },
-    {
-        "name": "minusculas",
-        "parameters": [
-            "str"
-        ],
-        "file": "string.py"
-    },
-    {
-        "name": "mayusculasPrimera",
-        "parameters": [
-            "str"
-        ],
-        "file": "string.py"
-    },
-    {
-        "name": "function10",
-        "parameters": [
-            "param10",
-            "param11",
-            "param12",
-            "param13"
-        ],
-        "file": "example.py"
+        "file": "maths"
     },
     {
         "name": "function20",
@@ -85,7 +59,7 @@
             "param22",
             "param23"
         ],
-        "file": "example.py"
+        "file": "functions"
     },
     {
         "name": "function30",
@@ -95,6 +69,24 @@
             "param32",
             "param33"
         ],
-        "file": "example.py"
+        "file": "functions"
+    },
+    {
+        "name": "cuentaString",
+        "parameters": [
+            "str",
+            "char"
+        ],
+        "file": "strings"
+    },
+    {
+        "name": "function10",
+        "parameters": [
+            "param10",
+            "param11",
+            "param12",
+            "param13"
+        ],
+        "file": "functions"
     }
 ]

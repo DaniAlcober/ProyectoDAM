@@ -4,7 +4,6 @@
 //    document.querySelector("body").classList.toggle("active");
 //})
 
-
 // Make clicked tab active
 var tab = document.querySelectorAll("a");
 tab.forEach(t => {
